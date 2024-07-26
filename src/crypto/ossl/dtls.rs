@@ -106,7 +106,7 @@ impl DtlsInner for OsslDtlsImpl {
                 .take_srtp_keying_material()
                 .expect("Exported keying material");
 
-            output.push_back(DtlsEvent::RemoteFingerprint(fingerprint));
+            //output.push_back(DtlsEvent::RemoteFingerprint(fingerprint));
 
             output.push_back(DtlsEvent::SrtpKeyingMaterial(keying_material, srtp_profile));
             Ok(false)
