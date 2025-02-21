@@ -360,7 +360,7 @@ impl Pacer for LeakyBucketPacer {
 
 impl LeakyBucketPacer {
     pub fn new(initial_pacing_bitrate: Bitrate) -> Self {
-        const DEFAULT_QUEUE_LIMIT: Duration = Duration::from_secs(2);
+        const DEFAULT_QUEUE_LIMIT: Duration = Duration::from_millis(16);
 
         Self {
             pacing_bitrate: initial_pacing_bitrate,
