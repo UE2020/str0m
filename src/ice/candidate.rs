@@ -454,6 +454,9 @@ impl Candidate {
         if let Some(raddr) = &self.raddr {
             s.push_str(&format!(" raddr {} rport {}", raddr.ip(), raddr.port()))
         }
+        if self.proto == Protocol::Tcp {
+            s.push_str(" tcptype passive");
+        }
         if let Some(ufrag) = &self.ufrag {
             s.push_str(&format!(" ufrag {}", ufrag));
         }
